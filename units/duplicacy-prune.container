@@ -1,0 +1,17 @@
+[Unit]
+Description=Duplicacy Prune
+
+[Container]
+Image=ghcr.io/computator/duplicacy
+
+Volume=duplicacy_prune:/repo
+Volume=/srv/media/files/duplicacy:/data
+Secret=duplicacy_key,type=env,target=DUPLICACY_PASSWORD
+
+Exec=-log prune \
+	-all \
+	-threads 4 \
+	-keep 180:360 \
+	-keep 30:120 \
+	-keep 14:60 \
+	-keep 7:14
