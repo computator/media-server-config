@@ -1,7 +1,7 @@
-#!/bin/sh
-exec echo 'No Direct Execution!'
-
+# set duplicacy encryption key
 head -n 1 | tr -d '\n' | podman secret create duplicacy_key -
+
+# initialize duplicacy
 podman run --rm -i \
 	--secret duplicacy_key,type=env,target=DUPLICACY_PASSWORD \
 	-v duplicacy_prune:/repo \
