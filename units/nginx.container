@@ -1,0 +1,14 @@
+[Unit]
+Description=Nginx
+
+[Container]
+Image=docker.io/library/nginx:alpine
+AutoUpdate=registry
+
+Volume=/etc/containers/systemd/conf/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+Volume=/srv/media:/srv:ro
+
+PublishPort=80:80
+
+[Install]
+WantedBy=multi-user.target
