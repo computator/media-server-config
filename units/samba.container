@@ -1,0 +1,16 @@
+[Unit]
+Description=Samba
+
+[Container]
+Image=ghcr.io/computator/smbd
+AutoUpdate=registry
+
+Environment=NO_DEFAULT_SHARE=1
+
+Volume=/etc/containers/systemd/conf/smbd-media.conf:/etc/samba/shares.d/media.conf:ro
+Volume=/srv/media:/srv:ro
+
+PublishPort=445:445
+
+[Install]
+WantedBy=multi-user.target
