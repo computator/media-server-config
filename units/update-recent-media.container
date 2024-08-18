@@ -7,4 +7,4 @@ Image=ghcr.io/computator/update-recent
 Volume=/srv/media/videos:/data
 
 # for multiple dirs
-Exec=sh -c 'for i in videos shows; do update_recent.sh "/data/$i"; done'
+Exec=sh -c 'for i in movies shows; do update_recent.sh "/data/$i"; done'
