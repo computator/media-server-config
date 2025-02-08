@@ -1,0 +1,6 @@
+# set notification options in /etc/zfs/zed.d/zed.rc
+ZED_EMAIL_ADDR=user@example.com
+ZED_NOTIFY_VERBOSE=1
+
+# enable service
+systemctl enable --now zfs-zed.service
