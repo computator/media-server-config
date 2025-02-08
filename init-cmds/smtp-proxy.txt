@@ -1,0 +1,12 @@
+# set sendgrid api key
+head -n 1 | tr -d '\n' | podman secret create smtp-proxy-pass -
+
+# link mail utils
+ln -s /usr/local/smtp-proxy-utils/mail-in-ctr.sh /usr/local/bin/mail
+ln -s /usr/local/smtp-proxy-utils/sendmail-in-ctr.sh /usr/local/bin/sendmail
+systemctl link /usr/local/smtp-proxy-utils/email-unit-invocation-logs@.service
+
+# configure email address
+mkdir /etc/systemd/system/email-unit-invocation-logs@.service.d
+echo -e '[Service]\nEnvironment=EMAIL_TGTS=user@example.com' > \
+	/etc/systemd/system/email-unit-invocation-logs@.service.d/10-set-email.conf

@@ -1,0 +1,22 @@
+[Unit]
+Description=SMTP Proxy
+
+[Container]
+Image=ghcr.io/computator/smtp-proxy
+AutoUpdate=registry
+ContainerName=smtp-proxy
+
+Environment=NO_NETWORK=true
+
+Environment=SMARTHOST=smtp.sendgrid.net
+Environment=SMARTHOST_PORT=587
+Environment=AUTH_USER=apikey
+Environment=AUTH_PASS_FILE=/run/secrets/smtp-proxy-pass
+
+Secret=smtp-proxy-pass
+
+Volume=smtp-proxy-queue:/var/spool/dma
+Volume=/usr/local/smtp-proxy-utils:/utils-export
+
+[Install]
+WantedBy=multi-user.target
