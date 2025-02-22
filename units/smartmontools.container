@@ -5,6 +5,7 @@ Description=smartmontools
 Image=ghcr.io/computator/smartmontools
 AutoUpdate=registry
 
+Network=system-services.network
 PodmanArgs=--privileged
 
 Environment=SMARTHOST=smtp-proxy

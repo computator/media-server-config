@@ -4,6 +4,8 @@ Description=Update Recent
 [Container]
 Image=ghcr.io/computator/update-recent
 
+Network=none
+
 Volume=/srv/media/videos:/data
 
 # for multiple dirs

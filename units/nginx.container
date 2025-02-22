@@ -8,6 +8,7 @@ AutoUpdate=registry
 Volume=/etc/containers/systemd/conf/nginx.conf:/etc/nginx/conf.d/default.conf:ro
 Volume=/srv/media:/srv:ro
 
+Network=system-services.network
 PublishPort=80:80
 
 [Install]

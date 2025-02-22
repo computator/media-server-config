@@ -6,6 +6,7 @@ Image=ghcr.io/computator/smtp-proxy
 AutoUpdate=registry
 ContainerName=smtp-proxy
 
+Network=system-services.network
 # SMTP needed for smartmontools
 # Environment=NO_NETWORK=true
 
