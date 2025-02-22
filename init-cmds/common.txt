@@ -1,0 +1,2 @@
+# link and enable timers
+systemctl enable --now /etc/containers/systemd/units/*.timer
