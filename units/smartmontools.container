@@ -8,7 +8,7 @@ AutoUpdate=registry
 PodmanArgs=--privileged
 
 Environment=SMARTHOST=smtp-proxy
-Environment=REPORT_EMAIL=user@example.com
+Environment=REPORT_EMAIL=root@localhost
 
 Volume=smartmontools:/var/lib/smartmontools
 

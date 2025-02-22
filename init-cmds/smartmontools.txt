@@ -1,0 +1,4 @@
+# configure email address
+mkdir /etc/containers/systemd/units/smartmontools.container.d
+echo -e '[Container]\nEnvironment=REPORT_EMAIL=user@example.com' > \
+	/etc/containers/systemd/units/smartmontools.container.d/10-set-email.conf
