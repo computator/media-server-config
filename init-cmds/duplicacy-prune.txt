@@ -1,9 +1,9 @@
 # set duplicacy encryption key
-head -n 1 | tr -d '\n' | podman secret create duplicacy_key -
+head -n 1 | tr -d '\n' | podman secret create duplicacy-key -
 
 # initialize duplicacy
 podman run --rm -i \
-	--secret duplicacy_key,type=env,target=DUPLICACY_PASSWORD \
+	--secret duplicacy-key,type=env,target=DUPLICACY_PASSWORD \
 	-v duplicacy_prune:/repo \
 	-v /srv/media/files/duplicacy:/data \
 	ghcr.io/computator/duplicacy \

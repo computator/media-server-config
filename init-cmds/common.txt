@@ -1,2 +1,5 @@
 # link and enable timers
 systemctl enable --now /etc/containers/systemd/units/*.timer
+
+# set selinux label
+chcon -R -u system_u -t container_file_t /srv/media

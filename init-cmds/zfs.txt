@@ -4,6 +4,3 @@ ZED_NOTIFY_VERBOSE=1
 
 # enable service
 systemctl enable --now zfs-zed.service
-
-# set selinux label
-chcon -R -u system_u -t container_file_t /srv/media
