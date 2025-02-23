@@ -1,0 +1,17 @@
+[Unit]
+Description=Cloudflared
+
+[Container]
+Image=docker.io/cloudflare/cloudflared
+AutoUpdate=registry
+Network=system-services.network
+
+Exec=tunnel run
+
+Secret=cf-tunnel-token,type=env,target=TUNNEL_TOKEN
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
