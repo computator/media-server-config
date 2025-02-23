@@ -1,5 +1,5 @@
 [Unit]
-Description=Samba
+Description=Samba smbd
 
 [Container]
 Image=ghcr.io/computator/smbd
