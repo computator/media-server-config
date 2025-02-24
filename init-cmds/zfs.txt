@@ -4,3 +4,6 @@ ZED_NOTIFY_VERBOSE=1
 
 # enable service
 systemctl enable --now zfs-zed.service
+
+# enable scrubbing
+systemctl enable --now zfs-scrub-monthly@media.timer
