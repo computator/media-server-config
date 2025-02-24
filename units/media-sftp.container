@@ -1,0 +1,18 @@
+[Unit]
+Description=media sftp
+
+[Container]
+Image=ghcr.io/computator/sshd
+AutoUpdate=registry
+Network=system-services.network
+
+Volume=media-sftp:/etc/ssh
+Volume=/srv/media:/srv/media
+
+PublishPort=2022:22
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
