@@ -1,5 +1,7 @@
 [Unit]
 Description=Update Recent
+RequiresMountsFor=/srv/media/videos
+OnFailure=email-unit-invocation-logs@%n.service
 
 [Container]
 Image=ghcr.io/computator/update-recent
