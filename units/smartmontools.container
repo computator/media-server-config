@@ -8,6 +8,7 @@ Network=system-services.network
 
 PodmanArgs=--privileged
 
+Environment=MAILNAME=%H.computator.net
 Environment=SMARTHOST=smtp-proxy
 Environment=REPORT_EMAIL=root@localhost
 
