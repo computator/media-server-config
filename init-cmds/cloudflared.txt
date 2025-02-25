@@ -1,2 +1,2 @@
 # set cloudflared tunnel token
-head -n 1 | tr -d '\n' | podman secret create cf-tunnel-token -
+grep -Eom 1 '\w+$' | tr -d '\n' | podman secret create --replace cf-tunnel-token -
