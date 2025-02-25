@@ -7,7 +7,7 @@ OnFailure=email-unit-invocation-logs@%n.service
 Image=ghcr.io/computator/duplicacy
 Network=none
 
-Volume=duplicacy_prune:/repo
+Volume=duplicacy-prune:/repo
 Volume=/srv/media/files/duplicacy:/data
 Secret=duplicacy-key,type=env,target=DUPLICACY_PASSWORD
 
