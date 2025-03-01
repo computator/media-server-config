@@ -11,6 +11,7 @@ Network=system-services.network
 # Environment=NO_NETWORK=true
 
 Environment=MAILNAME=%H.computator.net
+Environment=MASQUERADE=%H.computator.net
 Environment=SMARTHOST=smtp.sendgrid.net
 Environment=SMARTHOST_PORT=587
 Environment=AUTH_USER=apikey

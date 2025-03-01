@@ -1,7 +1,7 @@
 [Unit]
 Description=Duplicacy Prune
-OnSuccess=email-unit-invocation-logs@%n.service
-OnFailure=email-unit-invocation-logs@%n.service
+OnSuccess=email-unit-invocation-logs@%N.service
+OnFailure=email-unit-invocation-logs@%N.service
 
 [Container]
 Image=ghcr.io/computator/duplicacy
