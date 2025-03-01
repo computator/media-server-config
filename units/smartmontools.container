@@ -6,9 +6,10 @@ Image=ghcr.io/computator/smartmontools
 AutoUpdate=registry
 Network=system-services.network
 
+HostName=%H.computator.net
 PodmanArgs=--privileged
 
-Environment=MAILNAME=%H
+# Environment=MAILNAME=%H
 Environment=SMARTHOST=smtp-proxy
 Environment=REPORT_EMAIL=root@localhost
 
