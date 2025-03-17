@@ -1,4 +1,4 @@
 # configure authorized keys
-mkdir /etc/containers/systemd/units/media-sftp.container.d
+mkdir -p /etc/containers/systemd/units/media-sftp.container.d
 echo -e '[Container]\nEnvironment="SSH_AUTHORIZED_KEYS=ssh-ed25519 ABCDEF example key"' > \
 	/etc/containers/systemd/units/media-sftp.container.d/10-ssh-keys.conf
