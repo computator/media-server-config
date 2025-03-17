@@ -3,3 +3,10 @@ systemctl enable --now /etc/containers/systemd/units/*.timer
 
 # set selinux label
 chcon -R -u system_u -t container_file_t /srv/media
+
+# add online checks for services
+for svc in podman-auto-update fcos-zfs-autoupdate; do
+  mkdir -p /etc/systemd/system/${svc}.service.d
+  echo -e '[Service]\nExecCondition=nm-online -t 10' > \
+    /etc/systemd/system/${svc}.service.d/50-check-online.conf
+done
