@@ -6,8 +6,8 @@ mkdir -p /usr/local/smtp-proxy-utils
 chcon -u system_u -t container_file_t /usr/local/smtp-proxy-utils
 
 # link mail utils
-ln -s /usr/local/smtp-proxy-utils/mail-in-ctr.sh /usr/local/bin/mail
-ln -s /usr/local/smtp-proxy-utils/sendmail-in-ctr.sh /usr/local/bin/sendmail
+ln -s /usr/local/smtp-proxy-utils/mail-in-ctr.sh /usr/bin/mail
+ln -s /usr/local/smtp-proxy-utils/sendmail-in-ctr.sh /usr/bin/sendmail
 
 # link mail logs service
 systemctl link /usr/local/smtp-proxy-utils/email-unit-invocation-logs@.service
