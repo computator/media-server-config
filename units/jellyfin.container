@@ -1,0 +1,14 @@
+[Unit]
+Description=jellyfin
+
+[Container]
+Image=docker.io/jellyfin/jellyfin
+AutoUpdate=registry
+Network=host
+
+Volume=jellyfin-conf:/config
+Volume=/srv/media/cache/jellyfin:/cache
+Volume=/srv/media/videos:/videos:ro
+
+[Install]
+WantedBy=multi-user.target
