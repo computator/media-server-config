@@ -10,5 +10,8 @@ Volume=jellyfin-conf:/config
 Volume=/srv/media/cache/jellyfin:/cache
 Volume=/srv/media/videos:/videos:ro
 
+# default redirect fix: https://github.com/jellyfin/jellyfin/issues/14126
+Environment=JELLYFIN_DefaultRedirectPath=/web/
+
 [Install]
 WantedBy=multi-user.target
