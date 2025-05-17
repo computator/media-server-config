@@ -4,6 +4,10 @@ Description=jellyfin
 [Container]
 Image=docker.io/jellyfin/jellyfin
 AutoUpdate=registry
+
+# add services network for cloudflared
+Network=system-services.network
+# add host network for multicast
 Network=host
 
 Volume=jellyfin-conf:/config
