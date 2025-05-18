@@ -8,8 +8,12 @@ Network=system-services.network
 
 Environment=NO_DEFAULT_SHARE=1
 
+PodmanArgs=--hostuser=1000
+
 Volume=/etc/containers/systemd/conf/smbd-media.conf:/etc/samba/shares.d/media.conf:ro
-Volume=/srv/media:/srv:ro
+Volume=/srv/media:/srv
+
+Volume=smbd-data:/var/lib/samba
 
 PublishPort=445:445
 
