@@ -4,7 +4,8 @@ Description=Samba smbd
 [Container]
 Image=ghcr.io/computator/smbd
 AutoUpdate=registry
-Network=system-services.network
+# use host network so Multichannel + RSS work
+Network=host
 
 Environment=NO_DEFAULT_SHARE=1
 
@@ -14,8 +15,6 @@ Volume=/etc/containers/systemd/conf/smbd-media.conf:/etc/samba/shares.d/media.co
 Volume=/srv/media:/srv
 
 Volume=smbd-data:/var/lib/samba
-
-PublishPort=445:445
 
 [Install]
 WantedBy=multi-user.target
