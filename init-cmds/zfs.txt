@@ -1,5 +1,7 @@
 # set notification options in /etc/zfs/zed.d/zed.rc
 ZED_EMAIL_ADDR=user@example.com
+# local-bin is not in zed path (_PATH_STDPATH) so use full path
+ZED_EMAIL_PROG="/usr/local/bin/mail"
 ZED_NOTIFY_VERBOSE=1
 
 # enable service
