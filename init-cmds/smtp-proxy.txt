@@ -16,3 +16,8 @@ systemctl link /usr/local/smtp-proxy-utils/email-unit-invocation-logs@.service
 mkdir -p /etc/systemd/system/email-unit-invocation-logs@.service.d
 echo -e '[Service]\nEnvironment=EMAIL_TGTS=user@example.com' > \
 	/etc/systemd/system/email-unit-invocation-logs@.service.d/10-set-email.conf
+
+# reload systemd when starting container
+mkdir -p /etc/systemd/system/smtp-proxy.service.d
+echo -e '[Service]\nExecStartPost=-systemctl daemon-reload' > \
+	/etc/systemd/system/smtp-proxy.service.d/10-reload-systemd-on-start.conf
