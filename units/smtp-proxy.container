@@ -12,9 +12,9 @@ Network=system-services.network
 
 Environment=MAILNAME=%H.computator.net
 Environment=MASQUERADE=%H.computator.net
-Environment=SMARTHOST=smtp.sendgrid.net
-Environment=SMARTHOST_PORT=587
-Environment=AUTH_USER=apikey
+Environment=SMARTHOST=mail.smtp2go.com
+Environment=SMARTHOST_PORT=2525
+Environment=AUTH_USER=computator.net-%H
 Environment=AUTH_PASS_FILE=/run/secrets/smtp-proxy-pass
 
 Secret=smtp-proxy-pass
