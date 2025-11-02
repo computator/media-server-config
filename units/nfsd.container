@@ -10,7 +10,9 @@ SecurityLabelDisable=true
 AddCapability=SYS_ADMIN
 PublishPort=2049:2049
 
-Environment=EXPORTS01='/srv/videos -ro,all_squash,no_subtree_check,crossmnt,anonuid=1000,anongid=1000 10.42.0.0/24 10.42.0.1(rw)'
+Environment=EXPORTS01='/srv/downloads -ro,all_squash,no_subtree_check,crossmnt,anonuid=1000,anongid=1000 10.42.0.0/24 10.42.0.1(rw)'
+Environment=EXPORTS02='/srv/videos -ro,all_squash,no_subtree_check,crossmnt,anonuid=1000,anongid=1000 10.42.0.0/24 10.42.0.1(rw)'
+Volume=/srv/media/cache/nzbget/completed:/srv/downloads
 Volume=/srv/media/videos:/srv/videos
 
 Volume=nfsd-state:/var/lib/nfs

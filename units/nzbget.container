@@ -1,0 +1,13 @@
+[Unit]
+Description=nzbget
+
+[Container]
+Image=docker.io/nzbgetcom/nzbget
+AutoUpdate=registry
+Network=host
+
+Volume=nzbget-conf:/config
+Volume=/srv/media/cache/nzbget:/downloads
+
+[Install]
+WantedBy=multi-user.target
