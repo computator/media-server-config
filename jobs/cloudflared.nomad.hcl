@@ -3,6 +3,10 @@ job "cloudflared" {
     task "cloudflared" {
       driver = "podman"
 
+      meta {
+        autoupdate_imgtag_target = "latest"
+      }
+
       config {
         image        = "docker.io/cloudflare/cloudflared"
         command      = "tunnel"
